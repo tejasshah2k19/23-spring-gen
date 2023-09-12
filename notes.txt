@@ -1,0 +1,40 @@
+STS -> eclipse -> modify -> spring-> 
+
+
+spring starter project-> 
+		dev tools
+		spring web {core bean el context }
+
+
+
+configuration
+--------------
+1) pure java  { dbConnection } 
+2) xml {spring.xml web.xml }  --- properties 
+3) annotation  { @WebServlet } 
+
+		 
+1) controller 
+2) method -> url -> retunr jsp 
+3) webinf : views : jsp 
+4) application.properties
+
+to load jsp in spring project we need to add 1 lib 
+ tomcat embeded jasper 
+  
+  ----------------------------
+  
+  Calc.jsp -> 
+  	No.1 [   ]
+  	No.2 [   ] 
+  	
+  	Add()  
+  	Sub()
+  	Div() 
+  	
+  	[submit] 
+  	
+  	
+  	server -> data get -> radio button -> operation -> console print 
+  	
+  	  ----------------------------
