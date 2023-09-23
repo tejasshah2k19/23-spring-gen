@@ -37,4 +37,56 @@ to load jsp in spring project we need to add 1 lib
   	
   	server -> data get -> radio button -> operation -> console print 
   	
-  	  ----------------------------
+ ----------------------------
+ 
+ signup -> input-> database -> 
+ 
+ adv java -> jdbc connection -> db connection -> stmt -> query 
+ 
+ 5 -> connection 5 times -> 5 stmt -> 
+ 
+ 
+ u1			u2			u3 
+ Signup.jsp 
+ 
+ submit 
+ 
+ saveuser 
+ 	db connection , db insert {PreparedStatement } 
+ 	
+ 
+ JdbcTemplate -> query 
+ 
+ database -> 
+ 
+ 1) mysql-connector 
+ 2) spring-jdbc  
+ 
+ 
+ jdbc connection -> 
+ 	application.properties 
+ 	
+ 	spring.datasource.url=jdbc:mysql://localhost:3306/23spring
+	spring.datasource.username=root
+	spring.datasource.password=root
+ 	
+ dao -> 
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  	  
+  	  
+  	  
+  	  
+  	  
+  	  
+  	  
+  	  
+  	  
