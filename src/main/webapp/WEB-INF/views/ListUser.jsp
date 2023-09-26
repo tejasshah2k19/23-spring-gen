@@ -13,6 +13,7 @@
 
 
 	<h2>List Users</h2>
+	<a href="signup">Add New User</a>
 
 	<%
 	List<UserBean> users = (List<UserBean>) request.getAttribute("users");
@@ -21,17 +22,23 @@
 
 	<table border="1">
 		<tr>
+			<th>UserId</th>
 			<th>FirstName</th>
 			<th>Email</th>
 			<th>Password</th>
+			<th>Action</th>
 		</tr>
 		<%
 		for (UserBean u : users) {
 		%>
 		<tr>
+			<td><%=u.getUserId()%></td>
 			<td><%=u.getFirstName()%></td>
 			<td><%=u.getEmail()%></td>
 			<td><%=u.getPassword()%></td>
+			<td><a href="deleteuser?userId=<%=u.getUserId()%>">Delete</a>|Update| 
+			<a href="deleteuser2/<%=u.getUserId()%>">Delete2 </a>
+			</td>
 		</tr>
 		<%
 		}
