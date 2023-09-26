@@ -73,6 +73,13 @@ to load jsp in spring project we need to add 1 lib
  dao -> 
  	
  
+ drop table users;
+ create table users ( 
+ 	userId integer primary key auto_increment,
+ 	firstName varchar(30),
+ 	email varchar(30),
+ 	password varchar(30)
+ );
  
  
  
