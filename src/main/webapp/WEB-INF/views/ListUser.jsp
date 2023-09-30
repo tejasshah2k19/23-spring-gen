@@ -36,7 +36,10 @@
 			<td><%=u.getFirstName()%></td>
 			<td><%=u.getEmail()%></td>
 			<td><%=u.getPassword()%></td>
-			<td><a href="deleteuser?userId=<%=u.getUserId()%>">Delete</a>|Update| 
+			<td>
+			
+			<a href="viewuser?userId=<%=u.getUserId()%>">View</a> | 
+			<a href="deleteuser?userId=<%=u.getUserId()%>">Delete</a>|<a href="edituser?userId=<%=u.getUserId()%>">Edit</a>| 
 			<a href="deleteuser2/<%=u.getUserId()%>">Delete2 </a>
 			</td>
 		</tr>

@@ -92,4 +92,11 @@ public class UserController {
 		return "ListUser";// jsp
 	}
 
+	
+	@GetMapping("/viewuser")
+	public String viewUser(@RequestParam("userId") Integer userId,Model model) {
+		UserBean user = userDao.getUserById(userId);
+		model.addAttribute("user",user);
+		return "ViewUser";
+	}
 }

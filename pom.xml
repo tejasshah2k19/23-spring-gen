@@ -11,9 +11,9 @@
 	</parent>
 	<groupId>23-spring-web-r</groupId>
 	<artifactId>23-spring-web-r</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>23-spring-web-r</name>
+	 <name>23-spring-web-r</name>
 	<description>23-spring-web-r</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
