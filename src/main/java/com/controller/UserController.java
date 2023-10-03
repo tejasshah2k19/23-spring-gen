@@ -99,4 +99,23 @@ public class UserController {
 		model.addAttribute("user",user);
 		return "ViewUser";
 	}
+	
+	
+	@GetMapping("/edituser")
+	public String editUser(@RequestParam("userId") Integer userId,Model model) {
+		UserBean user = userDao.getUserById(userId); 
+		model.addAttribute("user",user);
+		return "EditUser";
+	}
+	
+	@PostMapping("/updateuser")
+	public String updateUser(UserBean user) {
+		userDao.updateUser(user);
+		return "redirect:/users"; // call users url instead of jsp 
+	}
+	
+	
+	
+	
+	
 }

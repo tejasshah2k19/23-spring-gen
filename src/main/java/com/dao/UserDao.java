@@ -35,6 +35,10 @@ public class UserDao {
 		return stmt.queryForObject("select * from users where userId = ? ", new BeanPropertyRowMapper<>(UserBean.class),
 				new Object[] { userId });
 	}
+
+	public void updateUser(UserBean user) {
+		stmt.update("update users set firstName = ? , email = ? where userId = ?",user.getFirstName(),user.getEmail(),user.getUserId());
+	}
 }
 //UserDao userDao = new UserDao();
 
