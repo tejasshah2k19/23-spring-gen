@@ -82,6 +82,18 @@ to load jsp in spring project we need to add 1 lib
  );
  
  
+ ------------------------------------------------
+ 1)
+ apache-commons-file-upload 
+ commons-io
+  
+  
+2) jsp page -> form -> method="post" enctype="multipart/form-data" 
+      <input type="file" name="profile"/> Submit 
+      
+      
+3) @Postmapping(@RequestParam("profile") MultipartFile file) 
+ 
  
  
  
