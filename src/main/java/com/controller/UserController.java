@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bean.UserBean;
 import com.dao.UserDao;
+import com.dto.LoginDto;
 
 //4 stereotype 
 @Controller
@@ -45,6 +46,8 @@ public class UserController {
 
 		// db save
 		userDao.addUser(user);
+		
+		//profile->webapp 
 
 		return "Login";// jsp
 	}
@@ -61,61 +64,63 @@ public class UserController {
 
 		// delete
 		// read userid from url
-		System.out.println("delete => "+userId);
+		System.out.println("delete => " + userId);
 		// delete query using dao
 		userDao.deleteUser(userId);
-		
+
 		List<UserBean> users = userDao.getAllUsers();
 		model.addAttribute("users", users);
 		return "ListUser";// jsp
 	}
 
-	
-
-	//	@GetMapping("/deleteuser2/{userId}/{roleId}/{countryName}")
-	//public String deleteUser2(@PathVariable("userId") Integer userId,@PathVariable("roleId") Integer roleId, Model model) {
-
+	// @GetMapping("/deleteuser2/{userId}/{roleId}/{countryName}")
+	// public String deleteUser2(@PathVariable("userId") Integer
+	// userId,@PathVariable("roleId") Integer roleId, Model model) {
 
 	@GetMapping("/deleteuser2/{userId}")
 	public String deleteUser2(@PathVariable("userId") Integer userId, Model model) {
-		//who authentication : authorization 
-		//delete -> comment  
+		// who authentication : authorization
+		// delete -> comment
 		//
 		// delete
 		// read userid from url
-		System.out.println("delete => "+userId);
+		System.out.println("delete => " + userId);
 		// delete query using dao
 		userDao.deleteUser(userId);
-		
+
 		List<UserBean> users = userDao.getAllUsers();
 		model.addAttribute("users", users);
 		return "ListUser";// jsp
 	}
 
-	
 	@GetMapping("/viewuser")
-	public String viewUser(@RequestParam("userId") Integer userId,Model model) {
+	public String viewUser(@RequestParam("userId") Integer userId, Model model) {
 		UserBean user = userDao.getUserById(userId);
-		model.addAttribute("user",user);
+		model.addAttribute("user", user);
 		return "ViewUser";
 	}
-	
-	
+
 	@GetMapping("/edituser")
-	public String editUser(@RequestParam("userId") Integer userId,Model model) {
-		UserBean user = userDao.getUserById(userId); 
-		model.addAttribute("user",user);
+	public String editUser(@RequestParam("userId") Integer userId, Model model) {
+		UserBean user = userDao.getUserById(userId);
+		model.addAttribute("user", user);
 		return "EditUser";
 	}
-	
+
 	@PostMapping("/updateuser")
 	public String updateUser(UserBean user) {
 		userDao.updateUser(user);
-		return "redirect:/users"; // call users url instead of jsp 
+		return "redirect:/users"; // call users url instead of jsp
 	}
-	
-	
-	
-	
-	
+
+	@PostMapping("/authenticate")
+	public String authenticate(LoginDto loginDto) {
+		UserBean user = userDao.authenticate(loginDto);
+		if(user == null) {
+			return "Login";
+		}else {
+			return "Home";
+		}
+	}
+
 }

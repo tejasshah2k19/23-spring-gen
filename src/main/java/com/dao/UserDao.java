@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.bean.UserBean;
+import com.dto.LoginDto;
 
 @Repository
 public class UserDao {
@@ -37,8 +38,22 @@ public class UserDao {
 	}
 
 	public void updateUser(UserBean user) {
-		stmt.update("update users set firstName = ? , email = ? where userId = ?",user.getFirstName(),user.getEmail(),user.getUserId());
+		stmt.update("update users set firstName = ? , email = ? where userId = ?", user.getFirstName(), user.getEmail(),
+				user.getUserId());
 	}
+
+	public UserBean authenticate(LoginDto loginDto) {
+
+		try {
+			return stmt.queryForObject("select * from users where email = ?  and password = ? ",
+					new BeanPropertyRowMapper<>(UserBean.class),
+					new Object[] { loginDto.getEmail(), loginDto.getPassword() });
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
 }
 //UserDao userDao = new UserDao();
 

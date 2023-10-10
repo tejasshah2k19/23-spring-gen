@@ -7,15 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<form action="uploadprofile" method="post" enctype="multipart/form-data">
- 
-ProfilePic: <input type="file" name="profile"/><br><br>
-<input type="submit" value="Upload"/>
-
-</form>
-
-<br><br>
- 
+<h2>Home</h2>
 </body>
 </html>

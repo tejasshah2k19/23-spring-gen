@@ -23,7 +23,7 @@ public class EmployeeController {
 		System.out.println(file.getOriginalFilename());
 
 		// file
-		String mainPath = "D:\\Temp\\spring23";
+		String mainPath = "E:\\Tejas Shah\\boot\\23-spring-web-r\\src\\main\\webapp\\profiles";
 
 		File myFile = new File(mainPath, file.getOriginalFilename());
 
