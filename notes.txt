@@ -94,6 +94,34 @@ to load jsp in spring project we need to add 1 lib
       
 3) @Postmapping(@RequestParam("profile") MultipartFile file) 
  
+ --------------------------------------------
+ 
+ validation ->
+ 
+ form -> required 
+ 		 size 
+ 		 format 
+ 		 
+ 		 
+ 		 hibernate-validator 
+ 		 spring-validator 
+ 
+ 1) add starter -> validation  
+ 
+ 2) Form -> input 
+ 2.1) spring form 
+ 
+ how to use spring form ? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
